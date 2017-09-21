@@ -28,7 +28,6 @@ zz = meannonan(xx);
 % and in the column with a NaN, this NaN is ignored. 
 
 %SS:
-aa=nan_mean(xx);
 
 
 %% Problem 2. ORFs using functions
@@ -47,28 +46,22 @@ seqrand=char(randdnaseq(N));
 % sequence is uppercase, lowercase, or some mixture. The builtin MATLAB functions
 % lower and upper could be useful for this. 
 G="GEBDYHYTYSG"
-[orflength, start_pos, stop_pos]=findORF(seqrand);
-[orflength, start_pos, stop_pos]=findORF(G);
+test=findORF(seqrand);
+test=findORF(G);
 % Part 3. Write another function called probabilityORF that utilizes the functions from 
 % Parts 1 and 2. It should take two inputs - a sequence length (N) and an length  of an ORF (N_ORF) and
 % returns the probability that that a sequence of length N contains an ORF
 % of at least length N_ORF
-prob=probabilityORF(500, 30);
+
 % Part4. Write  a final function called plotProbabilityORF.m which takes
 % N_ORF as an argument and makes a plot of the probabily of having an
 % ORF at least this long as a function of the dnasequence length. Decide how the
 % code should determine the lengths of dna sequence to test and implement
 % your decision. 
-prob=plotprobabilityORF(30);
+
 % Part 5. Write code that uses your function from part 4 to make a single
 % plot with separate curves for ORF lengths 100,200,300,and 400. Make sure
 % your plot has appropriate axis labels and legend. 
-figure;
-plotprobabilityORF(100); hold on;
-plotprobabilityORF(200); hold on;
-plotprobabilityORF(300); hold on;
-plotprobabilityORF(400); hold on;
-legend('100','200','300','400');
 
 %% Problem 3. Codon translation and optimization
 
@@ -83,15 +76,14 @@ legend('100','200','300','400');
 % translation should start from the 1st, 2nd or 3rd base pair (that is,
 % which reading frame to use). Make your code returns an error and
 % appropriate message if frame isn't 1,2, or 3. 
-protein=dna2protein(seqrand,1);
+test=dna2protein(seqrand,4);
 
 % Part 2. Write code to turn your protein sequence back into DNA sequence.
 % Call your function protein2dna.m
 % Notice that there isn't a unique way to do this. For example, there are 4
 % different codons that correspond to the amino acid Gly. For a first pass,
 % choose one of these codons at random.
-dna=protein2dna(test);
-
+%
 % Part 3. The third column of the codons.csv file contains the frequency of
 % this codon's use in the human proteome in units of number of appearances per
 % thousand codons. Some codons are used more than others. For example,
@@ -106,4 +98,3 @@ dna=protein2dna(test);
 % In other words, for any amino acid, it always uses the codon that appears
 % most frequently in the human proteome. 
 %
-proteinopt=protein2dnaOptimized(test);
