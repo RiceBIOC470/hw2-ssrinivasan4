@@ -1,3 +1,17 @@
+% GB Comments
+1a. 100
+1b. 100
+2a. 100
+2b. 100
+2c. 100
+2d. 90 The curve is correct, but the y-axis label is not correct or reasonable. 
+2e. 50 Curves are not correct. 
+3a.  100
+3b. 100 
+3c.  100
+Overall: 94
+
+
 %homework 2
 %Sanjana Srinivasan
 %% Problem 1. 
